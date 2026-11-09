@@ -1,0 +1,40 @@
+#zad1
+#1
+CREATE TABLE pracownik (
+id_pracownika INT AUTO_INCREMENT PRIMARY KEY,
+imie VARCHAR(40) NOT NULL,
+nazwisko VARCHAR(60) NOT NULL,
+data_urodzenia DATE NOT NULL);
+
+#2
+INSERT INTO pracownik (imie, nazwisko, data_urodzenia) VALUES ('Tomasz', 'Mazowiecki', '1981-03-05');
+INSERT INTO pracownik (imie, nazwisko, data_urodzenia) VALUES ('Janusz', 'Marewiecki', '1981-03-05');
+INSERT INTO pracownik (imie, nazwisko, data_urodzenia) VALUES ('Mariusz', 'Mazurski', '1981-03-05');
+
+#3
+UPDATE pracownik SET data_urodzenia = '1959-02-06' WHERE id_pracownika = 3;
+
+#zad2
+#1
+CREATE TABLE zadanie (
+id_zadania INT AUTO_INCREMENT PRIMARY KEY,
+nazwa_zadania VARCHAR(150) NOT NULL,
+priorytet ENUM('Low', 'Medium', 'High') NOT NULL,
+opis LONGTEXT,
+pracownik_id INT,
+CONSTRAINT fk_pracownik FOREIGN KEY (pracownik_id) REFERENCES pracownik(id_pracownika) ON DELETE SET NULL);
+
+#2
+ALTER TABLE zadanie ALTER priorytet SET DEFAULT 'Medium';
+
+#3
+
+#zad3
+#1
+CREATE TABLE projekt (
+id_projektu INT AUTO_INCREMENT PRIMARY KEY,
+nazwa_projektu VARCHAR(150),
+data_rozpoczecia DATE,
+data_zakonczenia DATE);
+
+#2
