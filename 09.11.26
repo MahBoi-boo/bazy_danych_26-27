@@ -38,3 +38,25 @@ data_rozpoczecia DATE,
 data_zakonczenia DATE);
 
 #2
+
+#3
+
+#zad4
+#1
+CREATE TABLE sprint (
+id_sprintu INT AUTO_INCREMENT PRIMARY KEY,
+numer_sprintu INT,
+data_rozpoczecia DATE,
+data_zakonczenia DATE);
+
+#2
+
+#3
+
+#zad5
+#1
+CREATE TABLE status (
+id_statusu AUTO_INCREMENT PRIMARY KEY,
+nazwa_statusu VARCHAR(20):
+#2
+INSERT INTO status VALUES
